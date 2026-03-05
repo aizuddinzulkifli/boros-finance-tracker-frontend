@@ -1,0 +1,30 @@
+<h2>Budgets</h2>
+<p>Set your monthly budget and track your spending.</p>
+<div class="row">
+    <div class="card spending overview">
+        <h3>Your spending overview</h3>
+        <p>Chart Placeholder</p>
+    </div>
+    <div class="card spending overtime">
+        <h3>Spending Overtime</h3>
+        <p>Chart Placeholder</p>
+    </div>
+</div>
+<div class="row">
+    <div class="card mothly salary">
+        <div class="inline">
+        <h3>Monthly Salary</h3>
+        <button>Edit Salary</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="card spending overview">
+        <div class="inline">
+        <h3>Monthly Budgets</h3>
+        <p>Chart Placeholder</p>
+        <button mat-raised-button (click)="openAddDialog()">+ Budget</button>
+        <app-budget-table></app-budget-table>
+        </div>
+    </div>
+</div>

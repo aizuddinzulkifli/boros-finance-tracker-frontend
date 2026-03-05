@@ -1,0 +1,11 @@
+<h3>{{ isNew ? 'Add New Category' : 'Edit Category' }}</h3>
+
+<mat-form-field style="width:100%">
+  <mat-label>Category Name</mat-label>
+  <input matInput [(ngModel)]="category.name" />
+</mat-form-field>
+
+<div style="margin-top:1rem; display:flex; justify-content:flex-end; gap: 0.5rem;">
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="save()">Save</button>
+</div>

@@ -1,0 +1,41 @@
+<p>transactiondialog.component works!</p>
+<h2>{{mode === 'add' ? 'Add Transaction' : 'Update Transaction'}}</h2>
+
+<mat-dialog-content>
+
+<mat-form-field appearance="outline" style="width:100%">
+  <mat-label>Amount</mat-label>
+  <input matInput type="number" [(ngModel)]="form.amount" required>
+</mat-form-field>
+
+<mat-form-field appearance="outline" style="width:100%">
+  <mat-label>Description</mat-label>
+  <input matInput [(ngModel)]="form.description">
+</mat-form-field>
+
+<mat-form-field appearance="outline" style="width:100%">
+  <mat-label>Date</mat-label>
+  <!--<input matInput type="date" [(ngModel)]="form.date">-->
+  <input matInput [matDatepicker]="picker" [(ngModel)]="form.date" required>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<mat-form-field appearance="outline" style="width:100%">
+  <mat-label>Category</mat-label>
+  <mat-select [(ngModel)]="form.categoryId" name="categoryId">
+    <mat-option *ngFor="let category of categories" [value]="category.categoryId">{{category.name}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<p>Selected Category: {{ form.categoryId }}</p>
+
+
+
+<div style="margin-top:16px; display:flex; gap:10px; justify-content: flex-end;">
+  <!--Delete button only in edit mode-->
+  <button *ngIf="mode === 'edit'" mat-button color="warn" (click)="delete()">Delete</button>
+  <button mat-raised-button color="primary" (click)="save()">{{mode === 'add' ? 'Save': 'Update'}}</button>
+  <button mat-button (click)="cancel()">Cancel</button>
+</div>
+
+</mat-dialog-content>

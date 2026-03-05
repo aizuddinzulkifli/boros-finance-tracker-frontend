@@ -1,0 +1,27 @@
+<p>login.component works!</p>
+<div style="max-width: 320px; margin: 80px auto;">
+    <h2>Login</h2>
+
+    <input
+    [(ngModel)]="username"
+    placeholder="Username"
+    class="full-width"
+    />
+
+    <br /><br />
+
+    <input
+    [(ngModel)]="password"
+    type="password"
+    placeholder="Password"
+    class="full-width"
+    />
+
+    <br /><br />
+
+    <button (click)="login()" class="full-width">
+        Login
+    </button>
+
+
+</div>

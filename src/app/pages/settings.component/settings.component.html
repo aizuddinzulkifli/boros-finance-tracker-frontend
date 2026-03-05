@@ -1,0 +1,37 @@
+<p>settings works!</p>
+<h2>Settings</h2>
+<p>Manage your account settings and preferences</p>
+<div class="tabs">
+    <mat-tab-group class="tabs" mat-align-tab="start">
+        <mat-tab label="Account">
+            <div class="row">
+                <div class="card profile details">
+                    <h2>Profile Details</h2>
+                    <div class="inline">
+                        <button>Upload Profile Photo</button>
+                        <button>Delete</button>
+                    </div>
+                    <p>*Image should be at least 320px big, and less than 500kb. Allowed files .png and .jpg.</p>
+                </div>
+                <div class="card close account">
+                    <h2>Manage Categories</h2>
+                    <p>You can permanently delete or temporarily freeze your accout. You can permanently delete or temperoraily freeze your account.</p>
+                    <button mat-button (click)="openCategoryDialog()">Manage</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card close account">
+                    <h2>Close Account</h2>
+                    <p>You can permanently delete or temporarily freeze your accout. You can permanently delete or temperoraily freeze your account.</p>
+                    <button (click)="logout()">Log Out</button>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Financial">
+            Content 2
+        </mat-tab>
+        <mat-tab label="Backup & Reset">
+            Content 3
+        </mat-tab>
+    </mat-tab-group>
+</div>

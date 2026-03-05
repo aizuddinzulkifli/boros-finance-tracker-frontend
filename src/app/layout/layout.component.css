@@ -1,0 +1,32 @@
+.layout {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #433BCE;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    padding: 8px;
+}
+
+.sidebar nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f6f8;
+    overflow-y: auto;
+}

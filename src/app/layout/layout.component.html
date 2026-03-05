@@ -1,0 +1,18 @@
+<p>layout works!</p>
+<div class="layout">
+    <aside class="sidebar">
+        <h2>Boros</h2>
+
+        <nav>
+            <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+            <a routerLink="/transactions" routerLinkActive="active">Transactions</a>
+            <a routerLink="/budgets" routerLinkActive="active">Budgets</a>
+            <a routerLink="/reports-insights" routerLinkActive="active">Reports & Insight</a>
+            <a routerLink="/settings" routerLinkActive="active">Settings</a>
+        </nav>
+    </aside>
+
+<main class="content">
+    <router-outlet></router-outlet>
+</main>
+</div>

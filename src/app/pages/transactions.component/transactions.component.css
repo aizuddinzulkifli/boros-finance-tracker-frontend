@@ -1,0 +1,100 @@
+.inline{
+    display: inline-block;
+}
+
+.row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 220px;
+    padding: 1rem;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.full-width{
+    width: 100%;
+}
+
+.mat-elevation-z8 {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 8px;
+    background: white;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* ===== FILTER ROW ===== */
+
+.filter-row {
+  display: flex;
+  justify-content: flex-end;  /* 👈 move to right */
+  gap: 16px;
+}
+
+/* Button matches form-field height */
+.action-btn {
+  height: 56px;
+  padding: 0 24px;
+  border-radius: 10px;
+}
+
+.action-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Balanced widths */
+.search-field {
+  width: 260px;
+}
+
+.date-field {
+  width: 320px;
+}
+
+/* Match Material default height */
+button[mat-raised-button] {
+  font-size: 14px;
+}
+
+.snackbar-success {
+    background-color: #4caf50 !important;
+    color: white !important;
+}
+
+.snackbar-error {
+  background-color: #f44336 !important;
+  color: white !important;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: gray;
+}
+
+.empty-state mat-icon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+
+
+
