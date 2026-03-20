@@ -19,12 +19,31 @@
     </div>
 </div>
 <div class="row">
-    <div class="card spending overview">
+    <div class="mat-elevation-z8">
         <div class="inline">
-        <h3>Monthly Budgets</h3>
-        <p>Chart Placeholder</p>
-        <button mat-raised-button (click)="openAddDialog()">+ Budget</button>
-        <app-budget-table></app-budget-table>
+            
+            <div class="filter-row">
+                <h3>Monthly Budgets</h3>
+
+                <div class="filter-actions">
+                <mat-form-field appearance="outline">
+                    <mat-label>Month</mat-label>
+                    <mat-select [(ngModel)]="month" (selectionChange)="loadBudgetStatus()">
+                        <mat-option *ngFor="let m of months" [value]="m.value">
+                            {{m.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Year</mat-label>
+                    <input matInput type="number" [(ngModel)]="year" (change)="loadBudgetStatus()">
+                </mat-form-field>
+
+                <button mat-raised-button color="primary" class="action-btn" (click)="openAddDialog()">Manage Budgets</button>
+                </div>
+            </div>
+        <app-budget-table [budgets]="budgetStatus"></app-budget-table>
         </div>
     </div>
 </div>

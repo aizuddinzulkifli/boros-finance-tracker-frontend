@@ -1,0 +1,49 @@
+
+.title{
+  margin-left: 24px;
+}
+
+.budget-form {
+  margin-bottom: 24px;
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.mat-from-field {
+  width: 100%;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+table {
+  margin-top: 16px;
+  border-collapse: separate;
+  border-spacing: 0 4px;
+}
+
+.table-row:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.empty-state {
+  text-align: center;
+  font-style: italic;
+  color: gray;
+}

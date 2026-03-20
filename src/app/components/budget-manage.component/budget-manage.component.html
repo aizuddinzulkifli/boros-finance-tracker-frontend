@@ -1,0 +1,89 @@
+
+  <h2 class="title">Manage Budgets</h2>
+
+<!--<button mat-raised-button color="primary" (click)="openAddDialog()">+ Add Budget</button>-->
+
+<!-- Inline Form -->
+<form [formGroup]="form" (ngSubmit)="submit()" class="budget-form">
+  <div class="form-row">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Category</mat-label>
+      <!--<input matInput formControlName="categoryId" placeholder="Enter category ID">-->
+      <mat-select formControlName="categoryId">
+        <mat-option *ngFor="let c of categories" [value]="c.categoryId">{{c.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Amount</mat-label>
+      <input matInput type="number" formControlName="amount">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Year</mat-label>
+      <input matInput type="number" formControlName="year">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Month</mat-label>
+      <mat-select formControlName="month">
+        <mat-option *ngFor="let m of months" [value]="m.value">{{m.name}}</mat-option>
+      </mat-select>
+      <!--<input matInput type="number" formControlName="month">-->
+    </mat-form-field>
+
+  </div>
+
+    <div class="form-actions">
+      <button mat-stroked-button color="warn" type="button" (click)="resetForm()">Cancel</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="loading">
+        {{ editingBudget ? 'Update' : 'Add' }}
+      </button>
+    </div>
+</form>
+
+<table mat-table [dataSource]="dataSource" class="full-width mat-elevation-z2">
+
+    <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef>Category</th>
+        <td mat-cell *matCellDef="let e">{{e.categoryName}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef>Amount</th>
+        <td mat-cell *matCellDef="let e">{{e.amount | currency}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="year">
+        <th mat-header-cell *matHeaderCellDef>Year</th>
+        <td mat-cell *matCellDef="let e">{{e.year}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="month">
+        <th mat-header-cell *matHeaderCellDef>Month</th>
+        <td mat-cell *matCellDef="let e">{{getMonthName(e.month)}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let e">
+            <button mat-icon-button color="primary" (click)="editBudget(e)">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteBudget(e)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </td>
+    </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+  <!-- Empty state-->
+      <tr *ngIf="dataSource.data.length === 0">
+      <td colspan="5" style="text-align: center;">
+        No budgets found
+      </td>
+    </tr>
+</table>

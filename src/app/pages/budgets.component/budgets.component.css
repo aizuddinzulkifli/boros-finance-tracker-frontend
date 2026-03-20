@@ -16,3 +16,36 @@ h2 {
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+
+.filter-row {
+  display: flex;           /* make row horizontal */
+  justify-content: space-between; /* first item left, last item right */
+  align-items: center;     /* vertically center h3 and button */
+  flex-wrap: nowrap;       /* prevent wrapping to next line */
+  width: 100%;             /* ensure full width */
+  gap: 16px;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.action-btn {
+    height: 56px;
+    padding: 0 24px;
+    border-radius: 10px;
+}
+
+.mat-elevation-z8 {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 8px;
+    background: white;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+

@@ -1,0 +1,14 @@
+.progress-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-label {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.SAFE { color:green; }
+.WARNING { color:orange; }
+.OVERSPENT { color:red; }

@@ -13,15 +13,15 @@ export class BudgetService {
   ) {}
 
   getBudgets() {
-    return this.http.get(`${this.apiUrl}`);
+    return this.http.get<Budget[]>(`${this.apiUrl}`);
   }
 
   createBudget(data: any) {
-    return this.http.post(`${this.apiUrl}`, data);
+    return this.http.post<Budget>(`${this.apiUrl}`, data);
   }
 
   updateBudget(id: number, data: any) {
-    return this.http.put(`${this.apiUrl}/${id}`, data)
+    return this.http.put<Budget>(`${this.apiUrl}/${id}`, data)
   }
 
   deleteBudget(id: number) {
@@ -34,11 +34,21 @@ export class BudgetService {
   
 }
 
+export interface Budget {
+  budgetId: number;
+  categoryId: number;
+  categoryName: string;
+  type: 'INCOME' | 'EXPENSE';
+  amount: number;
+  year: number;
+  month: number;
+}
+
 export interface BudgetStatus {
   categoryName: string;
   budgetAmount: number;
   spentAmount: number;
   remainingAmount: number;
   percentUsed: number;
-  status: string;
+  status: 'SAFE' | 'WARNING' | 'OVERSPENT';
 }
